@@ -9,5 +9,11 @@ Made in Unity 2021.3.33f1 LTS
 
 **********
 
-Includes from this github repo:
+Will Include some code and ideas from this github project:
 https://github.com/matthiasbroske/VampireSurvivorsClone
+
+**********
+
+Unity Asset Dependencies:
+[cMonkeys cInput](https://cmonkeys.itch.io/cinput2)
+[Fungus](https://fungusgames.com)

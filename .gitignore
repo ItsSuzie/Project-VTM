@@ -63,3 +63,11 @@ Thumbs.db
 # Assets thaat cant be pushed to version control such as art and music files
 *.[aA]rt
 *.[aA]udio
+
+# Proprietary/Licened Assets that will not be version controlled:
+cMonkeys/
+Fungus/
+# Simple Health Bar/
+cMonkeys.meta
+Fungus.meta
+# Simple Health Bar.meta
