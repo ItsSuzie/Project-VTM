@@ -87,7 +87,7 @@ func actorMovement(delta):
 	
 	moveSpeed = $actorStatsNode.actorStatMoveSpeed
 	var calculatedMoveSpeed = (moveSpeed * delta) * 100
-	print(str(calculatedMoveSpeed))
+	#print(str(calculatedMoveSpeed))
 	
 	velocity = mov.normalized() * calculatedMoveSpeed
 	move_and_slide()

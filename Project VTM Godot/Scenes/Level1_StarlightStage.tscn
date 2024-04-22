@@ -218,4 +218,4 @@ texture = ExtResource("4_wl8f1")
 [node name="Minra_Starlight_Player_Prefab" parent="." instance=ExtResource("5_4mvc7")]
 actorMaxHealth = 100
 actorCurrentHealth = 100
-actorStatMoveSpeed = 1337
+actorStatMoveSpeed = 100
