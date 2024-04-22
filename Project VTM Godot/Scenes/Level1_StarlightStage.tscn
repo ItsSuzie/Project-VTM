@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://bx7fh3kocesi0" path="res://Audio/Music/Starlight Stage_11.wav" id="3_pjrxo"]
 [ext_resource type="Texture2D" uid="uid://b4gd1fn1rgqhq" path="res://Art/Levels/StarlightStage/env_StarlightStage.PNG" id="4_ium5b"]
 [ext_resource type="Texture2D" uid="uid://bb35y36d7jhla" path="res://icon.svg" id="4_wl8f1"]
-[ext_resource type="PackedScene" uid="uid://bvvkyb27yqbvq" path="res://Players/Minra Starlight/minra_starlight_prefab.tscn" id="5_4mvc7"]
+[ext_resource type="PackedScene" uid="uid://bvvkyb27yqbvq" path="res://Actors/Players/Minra Starlight/minra_starlight_prefab.tscn" id="5_4mvc7"]
 
 [node name="GameWorld" type="Node2D"]
 
@@ -216,4 +216,6 @@ position = Vector2(-203, 1105)
 texture = ExtResource("4_wl8f1")
 
 [node name="Minra_Starlight_Player_Prefab" parent="." instance=ExtResource("5_4mvc7")]
-speed = 10000
+actorMaxHealth = 100
+actorCurrentHealth = 100
+actorStatMoveSpeed = 1337
