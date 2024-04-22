@@ -19,11 +19,10 @@ size = Vector2(870, 871)
 
 [node name="MinraStarlight" type="Area2D"]
 script = ExtResource("1_b3hbv")
-playerSpeed = 800
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_jfnfa")
 animation = &"MinraStarlight"
 frame_progress = 0.369716
