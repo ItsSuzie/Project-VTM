@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c75bh7extngxy"]
+[gd_scene load_steps=8 format=3 uid="uid://c75bh7extngxy"]
 
 [ext_resource type="PackedScene" uid="uid://cr6vf8ejjgv22" path="res://System Prefabs/!game_system_controller_.tscn" id="1_mvavs"]
 [ext_resource type="Script" path="res://Scripts/Game System Controller/AutoPlayerFollow.gd" id="2_wj0cp"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://b4gd1fn1rgqhq" path="res://Art/Levels/StarlightStage/env_StarlightStage.PNG" id="4_ium5b"]
 [ext_resource type="Texture2D" uid="uid://bb35y36d7jhla" path="res://icon.svg" id="4_wl8f1"]
 [ext_resource type="PackedScene" uid="uid://bvvkyb27yqbvq" path="res://Actors/Players/Minra Starlight/minra_starlight_prefab.tscn" id="5_4mvc7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uk4oj"]
+size = Vector2(70.7183, 70)
 
 [node name="GameWorld" type="Node2D"]
 
@@ -71,9 +74,16 @@ texture = ExtResource("4_ium5b")
 
 [node name="Obstacles" type="Node2D" parent="Environment"]
 
-[node name="Icon" type="Sprite2D" parent="Environment/Obstacles"]
+[node name="Obstacle" type="Area2D" parent="Environment/Obstacles"]
 position = Vector2(-405, 153)
+
+[node name="Icon" type="Sprite2D" parent="Environment/Obstacles/Obstacle"]
 texture = ExtResource("4_wl8f1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Obstacles/Obstacle"]
+visible = false
+scale = Vector2(1.81, 1.81)
+shape = SubResource("RectangleShape2D_uk4oj")
 
 [node name="Icon2" type="Sprite2D" parent="Environment/Obstacles"]
 position = Vector2(332, -212)

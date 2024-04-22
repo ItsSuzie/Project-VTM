@@ -40,8 +40,7 @@ func _ready():
 	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _process(delta):
 	processInspectorStatChanges()
 	
 	if actor_Selector == actorSelector.PLAYER: # If player, then we process player input
@@ -51,7 +50,9 @@ func _physics_process(delta):
 	else:
 		print("Actor type not selected. Please select an actor type in the inspector.")
 		pass
-	
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _physics_process(delta):
 	# move the actor
 	actorMovement(delta)
 
@@ -75,7 +76,7 @@ func playerInputProcessing():
 	
 	if mov.x < 0:
 		$AnimatedSprite2D.flip_h = true;
-	else:
+	elif mov.x > 0:
 		$AnimatedSprite2D.flip_h = false;
 
 ### Proceesses enemy AI - logic might go into a separate child node 
