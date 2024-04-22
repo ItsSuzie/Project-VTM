@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class MinraStarlight : Area2D
+public partial class MinraStarlightCS : Area2D
 {
 	
 	// Public Variables	

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cr6vf8ejjgv22"]
+
+[node name="!Game System controller" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]

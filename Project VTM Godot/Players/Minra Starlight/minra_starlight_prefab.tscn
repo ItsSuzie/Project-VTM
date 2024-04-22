@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvvkyb27yqbvq"]
+
+[ext_resource type="Texture2D" uid="uid://yw11qw08c6wt" path="res://Art/Characters/Minra Starlight/minracure.png" id="1_311oa"]
+[ext_resource type="Script" path="res://Scripts/PlayerController/MinraStarlightGD.gd" id="1_lvi8w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwm3d"]
+size = Vector2(87, 87)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cnbcq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_311oa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Minra_Starlight_Player_Prefab" type="CharacterBody2D"]
+script = ExtResource("1_lvi8w")
+speed = 9000
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 1.5)
+shape = SubResource("RectangleShape2D_jwm3d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_cnbcq")

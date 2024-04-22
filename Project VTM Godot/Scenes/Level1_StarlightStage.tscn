@@ -1,0 +1,219 @@
+[gd_scene load_steps=7 format=3 uid="uid://c75bh7extngxy"]
+
+[ext_resource type="PackedScene" uid="uid://cr6vf8ejjgv22" path="res://System Prefabs/!game_system_controller_.tscn" id="1_mvavs"]
+[ext_resource type="Script" path="res://Scripts/Game System Controller/AutoPlayerFollow.gd" id="2_wj0cp"]
+[ext_resource type="AudioStream" uid="uid://bx7fh3kocesi0" path="res://Audio/Music/Starlight Stage_11.wav" id="3_pjrxo"]
+[ext_resource type="Texture2D" uid="uid://b4gd1fn1rgqhq" path="res://Art/Levels/StarlightStage/env_StarlightStage.PNG" id="4_ium5b"]
+[ext_resource type="Texture2D" uid="uid://bb35y36d7jhla" path="res://icon.svg" id="4_wl8f1"]
+[ext_resource type="PackedScene" uid="uid://bvvkyb27yqbvq" path="res://Players/Minra Starlight/minra_starlight_prefab.tscn" id="5_4mvc7"]
+
+[node name="GameWorld" type="Node2D"]
+
+[node name="!Game System controller" parent="." node_paths=PackedStringArray("playerTarget") instance=ExtResource("1_mvavs")]
+script = ExtResource("2_wj0cp")
+playerTarget = NodePath("../Minra_Starlight_Player_Prefab")
+
+[node name="Level_Controller" type="Node2D" parent="." node_paths=PackedStringArray("playerTarget")]
+script = ExtResource("2_wj0cp")
+playerTarget = NodePath("../Minra_Starlight_Player_Prefab")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Level_Controller"]
+stream = ExtResource("3_pjrxo")
+autoplay = true
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="BG" type="Node2D" parent="Environment"]
+
+[node name="EnvStarlightStage" type="Sprite2D" parent="Environment/BG"]
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("4_ium5b")
+
+[node name="EnvStarlightStage2" type="Sprite2D" parent="Environment/BG"]
+position = Vector2(1464, 0)
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("4_ium5b")
+
+[node name="EnvStarlightStage3" type="Sprite2D" parent="Environment/BG"]
+position = Vector2(-1464, 0)
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("4_ium5b")
+
+[node name="EnvStarlightStage4" type="Sprite2D" parent="Environment/BG"]
+position = Vector2(0, 1500)
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("4_ium5b")
+
+[node name="EnvStarlightStage5" type="Sprite2D" parent="Environment/BG"]
+position = Vector2(1464, 1500)
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("4_ium5b")
+
+[node name="EnvStarlightStage6" type="Sprite2D" parent="Environment/BG"]
+position = Vector2(-1464, 1500)
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("4_ium5b")
+
+[node name="EnvStarlightStage7" type="Sprite2D" parent="Environment/BG"]
+position = Vector2(0, -1500)
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("4_ium5b")
+
+[node name="EnvStarlightStage8" type="Sprite2D" parent="Environment/BG"]
+position = Vector2(1464, -1500)
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("4_ium5b")
+
+[node name="EnvStarlightStage9" type="Sprite2D" parent="Environment/BG"]
+position = Vector2(-1464, -1500)
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("4_ium5b")
+
+[node name="Obstacles" type="Node2D" parent="Environment"]
+
+[node name="Icon" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(-405, 153)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon2" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(332, -212)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon3" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(225, 206)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon4" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(-995, -266)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon5" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(-258, -631)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon6" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(-365, -213)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon7" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(732, -194)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon8" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(1469, -559)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon9" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(1362, -141)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon10" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(142, -613)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon11" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(879, -978)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon12" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(772, -560)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon13" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(-1318, -879)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon14" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(-581, -1244)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon15" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(-688, -826)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon16" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(-1908, -1298)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon17" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(-1171, -1663)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon18" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(-1278, -1245)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon19" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(-181, -1226)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon20" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(556, -1591)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon21" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(449, -1173)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon22" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(-771, -1645)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon23" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(-34, -2010)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon24" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(-141, -1592)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon25" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(-1380, 1818)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon26" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(-643, 1453)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon27" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(-750, 1871)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon28" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(-1970, 1399)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon29" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(-1233, 1034)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon30" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(-1340, 1452)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon31" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(-243, 1471)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon32" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(494, 1106)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon33" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(387, 1524)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon34" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(-833, 1052)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon35" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(-96, 687)
+texture = ExtResource("4_wl8f1")
+
+[node name="Icon36" type="Sprite2D" parent="Environment/Obstacles"]
+position = Vector2(-203, 1105)
+texture = ExtResource("4_wl8f1")
+
+[node name="Minra_Starlight_Player_Prefab" parent="." instance=ExtResource("5_4mvc7")]
+speed = 10000

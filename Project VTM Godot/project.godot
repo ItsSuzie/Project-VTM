@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Project VTM"
-run/main_scene="res://Scenes/minra_starlight.tscn"
+run/main_scene="res://Scenes/Level1_StarlightStage.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/mode=2
 
 [dotnet]
 
