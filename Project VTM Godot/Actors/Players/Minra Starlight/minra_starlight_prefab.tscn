@@ -29,11 +29,9 @@ metadata/_edit_group_ = true
 script = ExtResource("2_2lhsl")
 
 [node name="EnemyCollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("RectangleShape2D_tgncl")
 
 [node name="EnvironmentCollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-1, 1)
 scale = Vector2(2.4, 2.4)
 shape = SubResource("RectangleShape2D_jwm3d")
