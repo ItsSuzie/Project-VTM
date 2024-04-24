@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dr7rh1ws8daov"]
 
-[ext_resource type="Script" path="res://Scripts/PlayerController/MinraStarlightCS.cs" id="1_t7ktg"]
+[ext_resource type="Script" path="res://Scripts/Players/MinraStarlightCS.cs" id="1_t7ktg"]
 [ext_resource type="Texture2D" uid="uid://yw11qw08c6wt" path="res://Art/Characters/Minra Starlight/minracure.png" id="2_vtl4k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6fj85"]

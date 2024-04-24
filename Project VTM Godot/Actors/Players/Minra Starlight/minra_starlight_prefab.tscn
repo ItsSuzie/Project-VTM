@@ -1,9 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvvkyb27yqbvq"]
+[gd_scene load_steps=14 format=3 uid="uid://bvvkyb27yqbvq"]
 
 [ext_resource type="Texture2D" uid="uid://yw11qw08c6wt" path="res://Art/Characters/Minra Starlight/minracure.png" id="1_311oa"]
 [ext_resource type="Script" path="res://Scripts/ActorBaseClasses/ActorControllerBase_class.gd" id="1_m0i22"]
-[ext_resource type="Script" path="res://Scripts/ActorBaseClasses/actorStats_class.gd" id="2_2lhsl"]
 [ext_resource type="Texture2D" uid="uid://bhb0qkwvi2exj" path="res://Art/Characters/Supplementary textures/circleShadow.png" id="3_x63i8"]
+[ext_resource type="Script" path="res://Scripts/ActorBaseClasses/actorStatsAttack_class.gd" id="4_8sx5s"]
+[ext_resource type="Script" path="res://Scripts/ActorBaseClasses/actorStatsCritRate_class.gd" id="5_qqeh1"]
+[ext_resource type="Script" path="res://Scripts/ActorBaseClasses/actorStatsHaste_class.gd" id="6_hp1j2"]
+[ext_resource type="Script" path="res://Scripts/ActorBaseClasses/actorStatsHealth_class.gd" id="7_o12tm"]
+[ext_resource type="Script" path="res://Scripts/ActorBaseClasses/actorStatsMoveSpeed_class.gd" id="8_430c2"]
+[ext_resource type="Script" path="res://Scripts/ActorBaseClasses/actorStatsPickupRadius_class.gd" id="9_alkh1"]
+[ext_resource type="Script" path="res://Scripts/ActorBaseClasses/PlayerActorClasses/playerInput_class.gd" id="10_nqd35"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tgncl"]
 
@@ -25,9 +31,6 @@ animations = [{
 script = ExtResource("1_m0i22")
 metadata/_edit_group_ = true
 
-[node name="actorStatsNode" type="Node2D" parent="."]
-script = ExtResource("2_2lhsl")
-
 [node name="EnemyCollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tgncl")
 
@@ -44,3 +47,25 @@ texture = ExtResource("3_x63i8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.025, 0.025)
 sprite_frames = SubResource("SpriteFrames_cnbcq")
+
+[node name="playerInput_class" type="Node" parent="."]
+script = ExtResource("10_nqd35")
+
+[node name="actorStatPickupRadius" type="Node" parent="."]
+script = ExtResource("9_alkh1")
+
+[node name="actorStatMoveSpeed_class" type="Node" parent="."]
+script = ExtResource("8_430c2")
+MoveSpeedMaxBase = 100
+
+[node name="actorStatHealth_class" type="Node" parent="."]
+script = ExtResource("7_o12tm")
+
+[node name="actorStatHaste_class" type="Node" parent="."]
+script = ExtResource("6_hp1j2")
+
+[node name="actorStatCritRate_class" type="Node" parent="."]
+script = ExtResource("5_qqeh1")
+
+[node name="actorStatAttack_class" type="Node" parent="."]
+script = ExtResource("4_8sx5s")
