@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://bvvkyb27yqbvq"]
 
-[ext_resource type="Texture2D" uid="uid://yw11qw08c6wt" path="res://Art/Characters/Minra Starlight/minracure.png" id="1_311oa"]
+[ext_resource type="Texture2D" uid="uid://yw11qw08c6wt" path="res://Assets/Art/Characters/Minra Starlight/minracure.png" id="1_311oa"]
 [ext_resource type="Script" path="res://Scripts/ActorBaseClasses/ActorControllerBase_class.gd" id="1_m0i22"]
-[ext_resource type="Texture2D" uid="uid://bhb0qkwvi2exj" path="res://Art/Characters/Supplementary textures/circleShadow.png" id="3_x63i8"]
+[ext_resource type="Texture2D" uid="uid://bhb0qkwvi2exj" path="res://Assets/Art/Characters/Supplementary textures/circleShadow.png" id="3_x63i8"]
 [ext_resource type="Script" path="res://Scripts/ActorBaseClasses/actorStatsAttack_class.gd" id="4_8sx5s"]
 [ext_resource type="Script" path="res://Scripts/ActorBaseClasses/actorStatsCritRate_class.gd" id="5_qqeh1"]
 [ext_resource type="Script" path="res://Scripts/ActorBaseClasses/actorStatsHaste_class.gd" id="6_hp1j2"]
@@ -28,6 +28,7 @@ animations = [{
 }]
 
 [node name="Minra_Starlight_Player_Prefab" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_m0i22")
 metadata/_edit_group_ = true
 

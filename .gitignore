@@ -43,3 +43,4 @@ Thumbs.db
 # Assets thaat cant be pushed to version control such as art and music files
 [aA]rt/
 [aA]udio/
+[aA]ssets/
