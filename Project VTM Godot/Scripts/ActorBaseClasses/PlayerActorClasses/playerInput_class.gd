@@ -9,3 +9,17 @@ func playerInputProcessing():
 	var mov = Vector2(x_mov, y_mov) # apples it to a vector2
 	
 	return mov
+
+# handles player input
+func _input(event):
+
+	if event.is_action_pressed("skill_1"):
+		$"../Label".modulate = Color.RED
+	if event.is_action_pressed("skill_2"):
+		$"../Label".modulate = Color.GREEN
+	if event.is_action_pressed("skill_3"):
+		$"../Label".modulate = Color.BLUE
+	if event.is_action_pressed("super"):
+		$"../Label".modulate = Color.PURPLE
+		
+	

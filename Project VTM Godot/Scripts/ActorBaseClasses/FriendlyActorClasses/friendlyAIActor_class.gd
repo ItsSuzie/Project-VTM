@@ -2,6 +2,9 @@ extends actorNode
 
 class_name friendlyAIActor_class
 
+func _ready():
+	pass
+
 func friendlyAIProcessing():
 	#Gets player input as a float, X and Y movement
 	var x_mov = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")

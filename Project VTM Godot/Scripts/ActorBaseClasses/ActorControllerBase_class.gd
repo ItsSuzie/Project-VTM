@@ -7,21 +7,22 @@ class_name actorControllerBase
 
 ### Variable - Private to this class only
 var moveSpeed : int # Player movement speed 
-var mov	: Vector2	# to store the movment vector of the actor
+var mov : Vector2	# to store the movment vector of the actor
 
 ### Store references to the nodes used on this actor
 # input
-var playerInputNode : Node = null
-var enemyAINode : Node = null 
-var friendlyAINode : Node = null
+@onready var playerInputNode : Node = null
+@onready var enemyAINode : Node = null 
+@onready var friendlyAINode : Node = null
 
 # stats
-var statAttackNode : Node = null
-var statCritrateNode : Node = null
-var statHasteNode : Node = null
-var statHealthNode : Node = null
-var statMoveSpeedNode : Node = null
-var statPickupRadNode : Node = null
+@onready var statAttackNode : Node = null
+@onready var statCritrateNode : Node = null
+@onready var statHasteNode : Node = null
+@onready var statHealthNode : Node = null
+@onready var statMoveSpeedNode : Node = null
+@onready var statPickupRadNode : Node = null
+
 
 ### Functions:
 
@@ -40,6 +41,9 @@ func _ready():
 	statMoveSpeedNode = $actorStatMoveSpeed_class
 	statPickupRadNode = $actorStatPickupRadius
 	
+	
+	## Apply UI health:
+	$Healthlabel.text = "Health:" + str(statHealthNode.actorStatHealthCurrent)
 
 
 func _process(_delta):	
@@ -52,18 +56,17 @@ func _process(_delta):
 		printerr("No input related node attached to this actor. Please add either an player input, enemy AI or Friendly AI node to this.")
 	else:
 		if playerInputNode != null:
-			mov = $playerInput_class.playerInputProcessing()
-			updateActorGraphics()
+			mov = playerInputNode.playerInputProcessing()
+			updateUIGraphics()
 		
 		if enemyAINode != null:
-			mov = $enemyAIActor_class.enemyAIProcessing()
-			updateActorGraphics()
+			mov = enemyAINode.enemyAIProcessing()
 			
 		if friendlyAINode != null:
-			mov = $friendlyAIActor_class.friendlyAIProcessing()
-			updateActorGraphics()
-
+			mov = friendlyAINode.friendlyAIProcessing()
 		
+		updateActorGraphics()
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -78,12 +81,14 @@ func updateActorGraphics():
 	elif mov.x > 0:
 		$AnimatedSprite2D.flip_h = false;
 
+### Update any and all ui graphics
+func updateUIGraphics():
+	$Healthlabel.text = "Health: " + str(statHealthNode.actorStatHealthCurrent)
+
 ### Handles movement of the actor
 func actorMovement(delta):
-	
-	
-	if $actorStatMoveSpeed_class != null:
-		moveSpeed = $actorStatMoveSpeed_class.MoveSpeedCurrent
+	if statMoveSpeedNode != null:
+		moveSpeed = statMoveSpeedNode.MoveSpeedCurrent
 		var calculatedMoveSpeed = (moveSpeed * delta) * 100
 		#print(str(calculatedMoveSpeed))
 		

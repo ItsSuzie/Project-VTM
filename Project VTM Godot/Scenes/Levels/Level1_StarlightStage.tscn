@@ -599,6 +599,32 @@ texture = ExtResource("5_hbleq")
 
 [node name="Pickup_BunCoin" parent="." instance=ExtResource("7_82xdo")]
 position = Vector2(-197, -39)
+expValue = 5
+
+[node name="Pickup_BunCoin7" parent="." instance=ExtResource("7_82xdo")]
+position = Vector2(297, -22)
+expValue = 5
+
+[node name="Pickup_BunCoin6" parent="." instance=ExtResource("7_82xdo")]
+position = Vector2(5, 178)
+expValue = 5
+
+[node name="Pickup_BunCoin5" parent="." instance=ExtResource("7_82xdo")]
+position = Vector2(89, -159)
+expValue = 5
+
+[node name="Pickup_BunCoin4" parent="." instance=ExtResource("7_82xdo")]
+position = Vector2(-143, -156)
+expValue = 5
+
+[node name="Pickup_BunCoin3" parent="." instance=ExtResource("7_82xdo")]
+position = Vector2(-98, 36)
+expValue = 5
+
+[node name="Pickup_BunCoin8" parent="." instance=ExtResource("7_82xdo")]
+position = Vector2(191, 39)
+expValue = 5
 
 [node name="Pickup_BunCoin2" parent="." instance=ExtResource("7_82xdo")]
 position = Vector2(204, -99)
+expValue = 5
