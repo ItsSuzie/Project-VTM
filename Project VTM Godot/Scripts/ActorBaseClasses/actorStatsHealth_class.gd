@@ -23,3 +23,8 @@ func takeDamage(damage):
 # once called, the game is over, do gameover stuff
 func gameOver():
 	print("game over!")
+
+
+# Update UI Health
+func updateUI():
+	$Healthlabel.text = "Health:" + str(actorStatHealthCurrent)

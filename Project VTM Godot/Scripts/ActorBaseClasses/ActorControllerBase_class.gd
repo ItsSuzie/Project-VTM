@@ -22,6 +22,7 @@ var mov : Vector2	# to store the movment vector of the actor
 @onready var statHealthNode : Node = null
 @onready var statMoveSpeedNode : Node = null
 @onready var statPickupRadNode : Node = null
+@onready var statEXPNode : Node = null
 
 
 ### Functions:
@@ -40,10 +41,8 @@ func _ready():
 	statHealthNode = $actorStatHealth_class
 	statMoveSpeedNode = $actorStatMoveSpeed_class
 	statPickupRadNode = $actorStatPickupRadius
-	
-	
-	## Apply UI health:
-	$Healthlabel.text = "Health:" + str(statHealthNode.actorStatHealthCurrent)
+	statEXPNode = $actorStatExp_class
+
 
 
 func _process(_delta):	
@@ -67,6 +66,10 @@ func _process(_delta):
 		
 		updateActorGraphics()
 
+
+# Adds experience to the player
+func addEXP(expAmount):
+	statEXPNode.addEXP(expAmount)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

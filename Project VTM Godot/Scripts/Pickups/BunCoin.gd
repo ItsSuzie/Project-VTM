@@ -6,6 +6,6 @@ extends Area2D
 func _on_body_entered(body):
 	print("coin get! EXP increased")
 	
-	$actorStatExp_class.addEXP(expValue)
+	$"../../Minra_Starlight_Player_Prefab".addEXP(expValue)
 	
 	queue_free()
