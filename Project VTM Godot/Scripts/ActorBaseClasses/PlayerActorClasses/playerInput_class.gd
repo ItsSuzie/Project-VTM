@@ -14,12 +14,16 @@ func playerInputProcessing():
 func _input(event):
 
 	if event.is_action_pressed("skill_1"):
-		$"../Label".modulate = Color.RED
+		print("Skill 1 activated")
+		$"../skillLabel".modulate = Color.RED
 	if event.is_action_pressed("skill_2"):
-		$"../Label".modulate = Color.GREEN
+		print("Skill 2 activated")
+		$"../skillLabel".modulate = Color.GREEN
 	if event.is_action_pressed("skill_3"):
-		$"../Label".modulate = Color.BLUE
+		print("Skill 3 activated")
+		$"../skillLabel".modulate = Color.BLUE
 	if event.is_action_pressed("super"):
-		$"../Label".modulate = Color.PURPLE
+		print("super activated")
+		$"../skillLabel".modulate = Color.PURPLE
 		
 	

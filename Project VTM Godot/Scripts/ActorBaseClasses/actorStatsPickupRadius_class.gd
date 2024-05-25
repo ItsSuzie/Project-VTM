@@ -9,5 +9,10 @@ class_name actorStatPickupRadius
 var actorStatPickupRadiusMaxModified : int
 
 func _ready():
-	# do calculations to get the final modified pickup radius
-	actorStatPickupRadiusCurrent = actorStatPickupRadiusMaxModified
+	 #do calculations to get the final modified pickup radius
+	#actorStatPickupRadiusCurrent = actorStatPickupRadiusMaxModified
+	$PickupArea/pickupRadius.shape.radius = actorStatPickupRadiusMaxBase
+
+# replace with layers but this will do temporarily
+func _on_body_entered(body: expBit):
+	print("pickup in pickup radius")

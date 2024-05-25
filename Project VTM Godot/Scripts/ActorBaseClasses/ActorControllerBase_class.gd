@@ -67,6 +67,7 @@ func _process(_delta):
 		updateActorGraphics()
 
 
+
 # Adds experience to the player
 func addEXP(expAmount):
 	statEXPNode.addEXP(expAmount)

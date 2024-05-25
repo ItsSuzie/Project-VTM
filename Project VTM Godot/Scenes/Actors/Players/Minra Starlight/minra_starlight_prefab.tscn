@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bvvkyb27yqbvq"]
+[gd_scene load_steps=15 format=3 uid="uid://bvvkyb27yqbvq"]
 
 [ext_resource type="Texture2D" uid="uid://yw11qw08c6wt" path="res://Assets/Art/Characters/Minra Starlight/minracure.png" id="1_311oa"]
 [ext_resource type="Script" path="res://Scripts/ActorBaseClasses/ActorControllerBase_class.gd" id="1_m0i22"]
@@ -27,6 +27,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0iiuj"]
+
 [node name="Minra_Starlight_Player_Prefab" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_m0i22")
@@ -54,6 +56,13 @@ script = ExtResource("10_nqd35")
 
 [node name="actorStatPickupRadius" type="Node" parent="."]
 script = ExtResource("9_alkh1")
+actorStatPickupRadiusMaxBase = 100
+
+[node name="PickupArea" type="Area2D" parent="actorStatPickupRadius"]
+
+[node name="pickupRadius" type="CollisionShape2D" parent="actorStatPickupRadius/PickupArea"]
+shape = SubResource("CircleShape2D_0iiuj")
+debug_color = Color(0.894571, 0.000213123, 0.780794, 0.42)
 
 [node name="actorStatMoveSpeed_class" type="Node" parent="."]
 script = ExtResource("8_430c2")
@@ -74,6 +83,12 @@ script = ExtResource("1_m3e1t")
 
 [node name="actorStatExp_class" type="Node" parent="."]
 script = ExtResource("1_m3e1t")
+
+[node name="skillLabel" type="Label" parent="."]
+offset_left = -347.0
+offset_top = -197.0
+offset_right = -307.0
+offset_bottom = -174.0
 
 [node name="CurrentLevel" type="Label" parent="."]
 offset_left = -341.0

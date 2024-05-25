@@ -11,6 +11,7 @@ func _onReady():
 
 # Controls the player leveling up
 func levelUp():
+	print ("Leveled Up!")
 	currentLevel += 1
 	currentEXP = 0
 	

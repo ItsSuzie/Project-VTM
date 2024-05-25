@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dh3wxicw63cmu"]
 
 [ext_resource type="Texture2D" uid="uid://kv8s03gnojfo" path="res://Assets/Art/Pickups/BunCoinBig.png" id="1_45ty6"]
-[ext_resource type="Script" path="res://Scripts/Pickups/BunCoin.gd" id="1_rercg"]
+[ext_resource type="Script" path="res://Scripts/Pickups/expBit.gd" id="1_x7yqy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ve6jx"]
 animations = [{
@@ -18,7 +18,7 @@ animations = [{
 
 [node name="pickup_buncoin" type="Area2D"]
 collision_mask = 2
-script = ExtResource("1_rercg")
+script = ExtResource("1_x7yqy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
