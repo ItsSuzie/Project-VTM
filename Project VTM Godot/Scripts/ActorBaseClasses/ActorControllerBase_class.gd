@@ -73,7 +73,7 @@ func addEXP(expAmount):
 	statEXPNode.addEXP(expAmount)
 
 
-fun addCoin(coinAmount):
+func addCoin(coinAmount):
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
