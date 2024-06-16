@@ -58,5 +58,6 @@ func _on_delete_body_entered(body):
 	if body.has_method("on_gold"):
 		body.on_gold(expValue);
 		queue_free()
+		
 
 

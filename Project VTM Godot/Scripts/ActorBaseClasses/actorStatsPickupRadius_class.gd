@@ -14,5 +14,5 @@ func _ready():
 	$PickupArea/pickupRadius.shape.radius = actorStatPickupRadiusMaxBase
 
 # replace with layers but this will do temporarily
-func _on_body_entered(body: expBit):
+func _on_body_entered(body: pickupCoinEXPBase):
 	print("pickup in pickup radius")
