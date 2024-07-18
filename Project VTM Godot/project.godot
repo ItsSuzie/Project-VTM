@@ -23,6 +23,10 @@ window/stretch/mode="viewport"
 
 project/assembly_name="Project VTA"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/block_code/plugin.cfg")
+
 [input]
 
 move_right={

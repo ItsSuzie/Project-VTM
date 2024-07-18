@@ -445,7 +445,7 @@ layer_0/tile_data = PackedInt32Array(-5242953, 458752, 2, -5177417, 458752, 2, -
 [node name="Obstacles" type="Node2D" parent="Environment BG"]
 
 [node name="Obstacle" type="Area2D" parent="Environment BG/Obstacles"]
-position = Vector2(-405, 153)
+position = Vector2(-116, 146)
 
 [node name="Icon" type="Sprite2D" parent="Environment BG/Obstacles/Obstacle"]
 texture = ExtResource("5_hbleq")

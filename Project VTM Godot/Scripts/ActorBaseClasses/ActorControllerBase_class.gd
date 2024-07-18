@@ -74,13 +74,12 @@ func addEXP(expAmount):
 
 
 func addCoin(coinAmount):
-	
+	return
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	# move the actor
-	actorMovement(delta)
+	actorMovement(delta) 	# move the actor
 
 ### Updates actor graphics
 func updateActorGraphics():

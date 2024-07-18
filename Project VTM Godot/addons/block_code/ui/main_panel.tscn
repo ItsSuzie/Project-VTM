@@ -1,0 +1,90 @@
+[gd_scene load_steps=6 format=3 uid="uid://bq37yla8ya707"]
+
+[ext_resource type="Script" path="res://addons/block_code/ui/main_panel.gd" id="1_u0xju"]
+[ext_resource type="PackedScene" uid="uid://dlabt3bgmpna2" path="res://addons/block_code/ui/picker/picker.tscn" id="2_hv5f3"]
+[ext_resource type="PackedScene" uid="uid://bm1183pm05p6a" path="res://addons/block_code/ui/title_bar/title_bar.tscn" id="2_k54yf"]
+[ext_resource type="PackedScene" uid="uid://layefpj12yp2" path="res://addons/block_code/ui/block_canvas/node_block_canvas/node_block_canvas.tscn" id="3_ml5y3"]
+[ext_resource type="PackedScene" uid="uid://cph1k5cfximbf" path="res://addons/block_code/drag_manager/drag_manager.tscn" id="4_yijtu"]
+
+[node name="MainPanel" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_u0xju")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScriptVBox" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ScriptVBox"]
+layout_mode = 2
+
+[node name="TitleBar" parent="MarginContainer/HBoxContainer/ScriptVBox/HBoxContainer" instance=ExtResource("2_k54yf")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/ScriptVBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Print Generated Script"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/ScriptVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PickerSplit" type="HSplitContainer" parent="MarginContainer/HBoxContainer/ScriptVBox/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Picker" parent="MarginContainer/HBoxContainer/ScriptVBox/MarginContainer/PickerSplit" instance=ExtResource("2_hv5f3")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/ScriptVBox/MarginContainer/PickerSplit"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/ScriptVBox/MarginContainer/PickerSplit/MarginContainer"]
+layout_mode = 2
+
+[node name="NodeBlockCanvas" parent="MarginContainer/HBoxContainer/ScriptVBox/MarginContainer/PickerSplit/MarginContainer/VBoxContainer" instance=ExtResource("3_ml5y3")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BottomBar" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ScriptVBox/MarginContainer/PickerSplit/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CollapseButton" type="Button" parent="MarginContainer/HBoxContainer/ScriptVBox/MarginContainer/PickerSplit/MarginContainer/VBoxContainer/BottomBar"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+tooltip_text = "Toggle Block Picker (Ctrl+BackSlash)"
+flat = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ScriptVBox/MarginContainer/PickerSplit/MarginContainer/VBoxContainer/BottomBar"]
+layout_mode = 2
+
+[node name="DragManager" parent="MarginContainer/HBoxContainer/ScriptVBox/MarginContainer" instance=ExtResource("4_yijtu")]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+picker_path = NodePath("../PickerSplit/Picker")
+block_canvas_path = NodePath("../PickerSplit/MarginContainer/VBoxContainer/NodeBlockCanvas")
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ScriptVBox/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ScriptVBox/MarginContainer/PickerSplit/MarginContainer/VBoxContainer/BottomBar/CollapseButton" to="." method="_on_collapse_button_pressed"]

@@ -11,6 +11,7 @@ enum pickupTypeENUM {COIN, EXP}
 # pickup value
 @export var expValue : int = 1
 @export var coinValue : int = 1
+@export var rotateAmount = 0
 
 # EXP Movement speed
 @export var movement_speed = 142.0;
@@ -29,6 +30,7 @@ func _on_xp_body_entered(body):
 
 # If it has entered the player body
 func _on_body_entered(body):
+	print(body)
 	if pickupType == pickupTypeENUM.COIN:
 		print("coin get! Added coin cound")
 		body.addEXP(expValue)
@@ -42,6 +44,8 @@ func _on_body_entered(body):
 
 
 func _process(_delta):
+	rotation = float((rotateAmount))
+	rotateAmount += 0.01
 	if !no_move && !str(player)=="[Deleted Object]":
 		var direction = global_position.direction_to(player.global_position);
 		var velocity = direction*movement_speed;

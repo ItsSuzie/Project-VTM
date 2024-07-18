@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://bvvkyb27yqbvq"]
+[gd_scene load_steps=16 format=3 uid="uid://bvvkyb27yqbvq"]
 
 [ext_resource type="Texture2D" uid="uid://yw11qw08c6wt" path="res://Assets/Art/Characters/Minra Starlight/minracure.png" id="1_311oa"]
 [ext_resource type="Script" path="res://Scripts/ActorBaseClasses/ActorControllerBase_class.gd" id="1_m0i22"]
 [ext_resource type="Script" path="res://Scripts/ActorBaseClasses/actorStatExp_Class.gd" id="1_m3e1t"]
 [ext_resource type="Texture2D" uid="uid://bhb0qkwvi2exj" path="res://Assets/Art/Characters/Supplementary textures/circleShadow.png" id="3_x63i8"]
+[ext_resource type="Script" path="res://Scenes/Actors/Players/Minra Starlight/flyingSpriteBounce.gd" id="4_bcj2q"]
 [ext_resource type="Script" path="res://Scripts/ActorBaseClasses/actorStatsCritRate_class.gd" id="5_qqeh1"]
 [ext_resource type="Script" path="res://Scripts/ActorBaseClasses/actorStatsHaste_class.gd" id="6_hp1j2"]
 [ext_resource type="Script" path="res://Scripts/ActorBaseClasses/actorStatsHealth_class.gd" id="7_o12tm"]
@@ -28,6 +29,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0iiuj"]
+radius = 100.0
 
 [node name="Minra_Starlight_Player_Prefab" type="CharacterBody2D"]
 collision_layer = 2
@@ -50,6 +52,9 @@ texture = ExtResource("3_x63i8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.025, 0.025)
 sprite_frames = SubResource("SpriteFrames_cnbcq")
+script = ExtResource("4_bcj2q")
+amplitude = 2
+speed = 4
 
 [node name="playerInput_class" type="Node" parent="."]
 script = ExtResource("10_nqd35")
