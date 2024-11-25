@@ -446,12 +446,12 @@ layer_0/tile_data = PackedInt32Array(-5242953, 458752, 2, -5177417, 458752, 2, -
 
 [node name="Obstacle" type="Area2D" parent="Environment BG/Obstacles"]
 position = Vector2(-116, 146)
+collision_layer = 32
 
 [node name="Icon" type="Sprite2D" parent="Environment BG/Obstacles/Obstacle"]
 texture = ExtResource("5_hbleq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment BG/Obstacles/Obstacle"]
-visible = false
 scale = Vector2(1.81, 1.81)
 shape = SubResource("RectangleShape2D_uk4oj")
 

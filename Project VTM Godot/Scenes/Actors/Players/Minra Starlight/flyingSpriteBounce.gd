@@ -11,8 +11,8 @@ func _ready():
 	original_position = position
 
 func _process(delta):
-	var offset = (amplitude * sin(phase_shift) - amplitude/2)
-	var new_position = (original_position + Vector2(0, offset))
+	var SinewaveOffset = (amplitude * sin(phase_shift) - amplitude/2)
+	var new_position = (original_position + Vector2(0, SinewaveOffset))
 	
 	position.y = new_position.y
 	

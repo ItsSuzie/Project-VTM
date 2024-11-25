@@ -30,9 +30,15 @@ var mov : Vector2	# to store the movment vector of the actor
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# reference to input relation nodes
-	playerInputNode = $playerInput_class
-	enemyAINode = $enemyAIActor_class
-	friendlyAINode = $friendlyAIActor_class
+	if (get_node("playerInput_class")):
+		playerInputNode = $playerInput_class
+	elif (get_node("$enemyAIActor_class")):
+		enemyAINode = $enemyAIActor_class
+	elif (get_node("$friendlyAIActor_class")):
+		friendlyAINode = $friendlyAIActor_class
+	else:
+		print("Node for Player Input, AI Actor, or Friendly AI does not exist.")
+		print("Please add this Node to allow the actor to work.")
 	
 	# reference to stat nodes
 	statAttackNode = $actorStatAttack_class
@@ -101,6 +107,11 @@ func actorMovement(delta):
 		
 		velocity = mov.normalized() * calculatedMoveSpeed
 		move_and_slide()
+		
+		for i in get_slide_collision_count():
+			var collision = get_slide_collision(i)
+			print("I collided with ", collision.get_collider().name)
+			
 	else:
 		print("Node 'actorStatMoveSpeed_Class' missing from this actor. Cannot move.")
 		print("Please add this class to allow the actor to move.")

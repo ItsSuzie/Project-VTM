@@ -32,7 +32,7 @@ animations = [{
 radius = 100.0
 
 [node name="Minra_Starlight_Player_Prefab" type="CharacterBody2D"]
-collision_layer = 2
+collision_layer = 16
 script = ExtResource("1_m0i22")
 metadata/_edit_group_ = true
 
@@ -61,7 +61,6 @@ script = ExtResource("10_nqd35")
 
 [node name="actorStatPickupRadius" type="Node" parent="."]
 script = ExtResource("9_alkh1")
-actorStatPickupRadiusMaxBase = 100
 
 [node name="PickupArea" type="Area2D" parent="actorStatPickupRadius"]
 

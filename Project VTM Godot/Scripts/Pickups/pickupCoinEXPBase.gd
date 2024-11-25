@@ -47,13 +47,13 @@ func _process(_delta):
 	rotation = float((rotateAmount))
 	rotateAmount += 0.01
 	if !no_move && !str(player)=="[Deleted Object]":
-		var direction = global_position.direction_to(player.global_position);
-		var velocity = direction*movement_speed;
+		var EXPdirection = global_position.direction_to(player.global_position);
+		var EXPvelocity = EXPdirection*movement_speed;
 		move_and_slide();
 		
-		if direction.x > 0.1:
+		if EXPdirection.x > 0.1:
 			$sprite_xp.flip_h = true;
-		elif direction.x < -0.1:
+		elif EXPdirection.x < -0.1:
 			$sprite_xp.flip_h = false;
 
 
